@@ -3,7 +3,7 @@ from rasa_sdk import Action, Tracker
 from rasa_sdk.executor import CollectingDispatcher
 import pandas as pd
 
-class ActionSuggestLaptops(Action):
+class ActionFindLaptop(Action):
     def name(self) -> Text:
         return "ac"
 
