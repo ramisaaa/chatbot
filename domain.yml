@@ -47,6 +47,7 @@ responses:
 #    - text: Did that help you?
   utter_greet:
     - text: Hey there! How can I help you today?
+    - text: Hey!
     - text: Howdy! Is there anything I can help you with?
 #  utter_happy:
 #    - text: Great, carry on!
