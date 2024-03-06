@@ -1,114 +1,87 @@
-version: "3.1"
-
 intents:
   - greet
-  - goodbye
-  - affirm
-  - deny
   - bye
+#  - affirm
+#  - deny
   - find_laptop
-  - mood_great
-  - mood_unhappy
-  - bot_challenge
-entities:
-  - brand
-  - budget
-  - cpu
-  - hard_disk
-  - weight
-  - screen_size
+  - specify_laptop_requirements
 
+entities:
+  - CPU
+  - RAM
+  - Storage
+  - budget
 
 slots:
-  brand:
+  CPU:
     type: text
-  cpu:
+    mappings:
+      - type: from_entity
+        entity: CPU
+  RAM:
     type: text
+    mappings:
+      - type: from_entity
+        entity: RAM
+  Storage:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: Storage
   budget:
-    type: categorical
-    values:
-    - valid
-    - invalid
-  hard_disk:
-    type: text
-  weight:
-    type: text
-  screen_size:
-    type: text
+    type: float
+    mappings:
+      - type: from_entity
+        entity: budget
 
-templates:
+responses:
+#  utter_search_results:
+#    - text: "Here are some laptops that match your criteria: {search_results}"
   utter_bye:
-  - text: See you again!
-  - text: goodbye, hope i was of help today
-  - text: Bye-bye
-  - text: Bye!
-  - text: Good luck!
-  utter_ask_budget:
-  - text: What would be your preferred budget?
-    buttons:
-    - title: Up to 200 euro
-      payload: '/ask_budget{"budget": "299"}'
-    - title: 200 to 300 EUR
-      payload: '/ask_budget{"budget": "700"}'
-    - title: 300 to 400 EUR
-      payload: '/ask_budget{"budget": "701"}'
-    - title: 400 to 600 EUR
-      payload: '/ask_budget{"budget": "701"}'
-    - title: 600 to 800 EUR
-      payload: '/ask_budget{"budget": "701"}'
-    - title: 800 to 1000 EUR
-      payload: '/ask_budget{"budget": "701"}'
-    - title: 1000 and more
-      payload: '/ask_budget{"budget": "1000"}'
-  utter_ask_brand:
-  - text: which brand do you have in mind?
-    buttons:
-    - title: Acer
-      payload: Acer
-    - title: Apple
-      payload: Apple
-    - title: HP
-      payload: HP
-    - title: Dell
-      payload: Dell
-    - title: Lenovo
-      payload: Lenovo
-    - title: ASUS
-      payload: ASUS
-    - title: Microsoft
-      payload: Microsoft
-    - title: MSI
-      payload: MSI
-  utter_did_that_help:
-  - text: Did that help you?
-  utter_deny:
-  - text: Sorry, hope to serve you better next time.
+    - text: See you again!
+    - text: goodbye, hope I was of help today
+    - text: Bye-bye
+    - text: Bye!
+    - text: Good luck!
+#  utter_did_that_help:
+#    - text: Did that help you?
   utter_greet:
-  - text: Hey there! How can i help you today?
-  - text: Howdy! Is there anything i can help you with?
-  utter_happy:
-  - text: Great carry on!
-  utter_out_of_scope:
-  - text: Sorry, I do not understand this. Please be specific.
-  utter_search_invalid:
-  - text: Sorry, we do not have any response which match your requirements. Hope to serve you better next time!
-  utter_thanks_response:
-  - text: You are welcome!
-  - text: You are most welcome! Is there anything else that i can help you with?
+    - text: Hey there! How can I help you today?
+    - text: Howdy! Is there anything I can help you with?
+#  utter_happy:
+#    - text: Great, carry on!
+#  utter_out_of_scope:
+#    - text: Sorry, I do not understand this. Please be specific.
+#  utter_search_invalid:
+#    - text: Sorry, we do not have any response that matches your requirements. Hope to serve you better next time!
+#  utter_thanks_response:
+#    - text: You are welcome!
+#    - text: You are most welcome! Is there anything else that I can help you with?
+  utter_ask_brand:
+    - text: What brand do you have in mind?
+  utter_ask_budget:
+    - text: how much is your budget?
+  utter_ask_ram:
+    - text: enter the amount of ram you prefer.
+  utter_ask_storage:
+    - text: enter the amount of storage you prefer.
+
+
 
 actions:
-- action_restart
-- utter_ask_brand
-- utter_ask_budget
-- utter_ask_details
-- utter_bye
-- utter_deny
-- utter_did_that_help
-- utter_greet
-- utter_location_invalid
-- utter_out_of_scopecuisine
-- utter_search_invalid
-- utter_thanks_response
+  - action_restart
+  - utter_ask_brand
+  - utter_ask_budget
+  - action_find_laptop
+  #  - utter_ask_details
+  - utter_bye
+#  - utter_deny
+#  - utter_did_that_help
+  - utter_greet
+#  - utter_out_of_scope
+#  - utter_search_invalid
+#  - utter_thanks_response
+#  - utter_search_results
 
 session_config:
   session_expiration_time: 60
