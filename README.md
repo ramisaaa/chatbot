@@ -1,0 +1,2 @@
+- add usability to the action, for example if user asked for a laptop for gaming, programming
+- add 2 other entities, from_price and to_price for the range

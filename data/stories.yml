@@ -1,28 +1,21 @@
 version: "3.1"
 
 stories:
-
-- story: happy path
+- story: User finds laptop
   steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: find_laptop
-  - action: action_find_laptop
-  - intent: bye
-  - action: utter_bye
-- story: Find laptop
-  steps:
+    - intent: greet
+    - action: utter_greet
     - intent: find_laptop
     - action: action_find_laptop
-
-- story: User wants to find a laptop
+    - action: utter_bye
+- story: User finds a laptop with specified brand
   steps:
+    - intent: greet
+    - action: utter_greet
     - intent: find_laptop
-    - action: utter_ask_ram
-    - intent: specify_laptop_requirements
     - action: utter_ask_brand
-    - intent: specify_laptop_requirements
-    - action: utter_ask_storage
-    - intent: specify_laptop_requirements
-    - action: utter_ask_budget
+    - intent: brand_specified
+      entities:
+        - brand: "Dell"
     - action: action_find_laptop
+    - action: utter_bye

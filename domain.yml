@@ -1,16 +1,21 @@
 intents:
   - greet
   - bye
-#  - affirm
-#  - deny
+  - deny
+  - affirm
   - find_laptop
   - specify_laptop_requirements
+  - brand_specified
+  - ram_specified
+  - storage_specified
+  - budget_specified
 
 entities:
   - CPU
   - RAM
   - Storage
   - budget
+  - brand
 
 slots:
   CPU:
@@ -28,6 +33,11 @@ slots:
     mappings:
       - type: from_entity
         entity: Storage
+  brand:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: brand
   budget:
     type: float
     mappings:
@@ -35,29 +45,17 @@ slots:
         entity: budget
 
 responses:
-#  utter_search_results:
-#    - text: "Here are some laptops that match your criteria: {search_results}"
   utter_bye:
     - text: See you again!
     - text: goodbye, hope I was of help today
     - text: Bye-bye
     - text: Bye!
     - text: Good luck!
-#  utter_did_that_help:
-#    - text: Did that help you?
   utter_greet:
     - text: Hey there! How can I help you today?
+    - text: Hello.How can I help you today?
     - text: Hey!
     - text: Howdy! Is there anything I can help you with?
-#  utter_happy:
-#    - text: Great, carry on!
-#  utter_out_of_scope:
-#    - text: Sorry, I do not understand this. Please be specific.
-#  utter_search_invalid:
-#    - text: Sorry, we do not have any response that matches your requirements. Hope to serve you better next time!
-#  utter_thanks_response:
-#    - text: You are welcome!
-#    - text: You are most welcome! Is there anything else that I can help you with?
   utter_ask_brand:
     - text: What brand do you have in mind?
   utter_ask_budget:
@@ -74,15 +72,8 @@ actions:
   - utter_ask_brand
   - utter_ask_budget
   - action_find_laptop
-  #  - utter_ask_details
   - utter_bye
-#  - utter_deny
-#  - utter_did_that_help
   - utter_greet
-#  - utter_out_of_scope
-#  - utter_search_invalid
-#  - utter_thanks_response
-#  - utter_search_results
 
 session_config:
   session_expiration_time: 60

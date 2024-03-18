@@ -52,8 +52,36 @@ nlu:
 - intent: find_laptop
   examples: |
     - Find me a laptop under [budget]
-    - Recommend a laptop with [specs] around [budget]
+    - Recommend a laptop with brand [brand] around [budget]
     - I want a Laptop for Programming around [budget]
     - I want a Laptop for data science jobs under [budget]
-    
-    
+    - find me laptop
+- intent: specify_laptop_requirements
+  examples: |
+    - I have specific requirements
+    - Let's talk about laptop preferences
+    - Laptop specifications
+
+- intent: brand_specified
+  examples: |
+    - I prefer Dell laptops
+    - What about HP laptops?
+    - Brand: Lenovo
+
+- intent: ram_specified
+  examples: |
+    - I need at least 8GB RAM
+    - 16GB RAM preferred
+    - RAM: 32GB
+
+- intent: storage_specified
+  examples: |
+    - Storage: 256GB SSD
+    - 1TB HDD storage
+    - What's the storage capacity?
+
+- intent: budget_specified
+  examples: |
+    - My budget is $1000
+    - What laptops can I get for $800?
+    - Budget: $1200
