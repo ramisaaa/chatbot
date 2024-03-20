@@ -51,7 +51,7 @@ nlu:
 
 - intent: find_laptop
   examples: |
-    - Find me a laptop under [budget]
+    - Find me a laptop under [1000](budget)
     - Recommend a laptop with brand [brand] around [budget]
     - I want a Laptop for Programming around [budget]
     - I want a Laptop for data science jobs under [budget]
