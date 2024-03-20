@@ -56,6 +56,7 @@ nlu:
     - I want a Laptop for Programming around [budget]
     - I want a Laptop for data science jobs under [budget]
     - find me laptop
+    - I want a laptop
 - intent: specify_laptop_requirements
   examples: |
     - I have specific requirements
@@ -66,7 +67,7 @@ nlu:
   examples: |
     - I prefer Dell laptops
     - What about HP laptops?
-    - Brand: Lenovo
+    - Brand: [Dell](brand)
 
 - intent: ram_specified
   examples: |
