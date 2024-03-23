@@ -65,24 +65,61 @@ nlu:
 
 - intent: brand_specified
   examples: |
-    - I prefer Dell laptops
-    - What about HP laptops?
+    - I prefer [Dell](brand) laptops
+    - What about [HP] (brand)?
     - Brand: [Dell](brand)
 
 - intent: ram_specified
   examples: |
-    - I need at least 8GB RAM
-    - 16GB RAM preferred
-    - RAM: 32GB
+    - I need at least [8](RAM)
+    - [16](RAM) preferred
+    - RAM: [32](RAM)
+    - RAM: [32](RAM)
+    - [8](RAM)
 
 - intent: storage_specified
   examples: |
-    - Storage: 256GB SSD
-    - 1TB HDD storage
+    - Storage: [256GB](Storage) SSD
+    - [1TB](Storage) HDD storage
     - What's the storage capacity?
+    - [512](Storage)
 
 - intent: budget_specified
   examples: |
-    - My budget is $1000
-    - What laptops can I get for $800?
-    - Budget: $1200
+    - My budget is [1000](budget)
+    - What laptops can I get for [800](budget)?
+    - Budget: [1200](budget)
+    - [1000](budget)
+- lookup: brand
+  examples: |
+    - Dell
+    - ASUS
+    - MSI
+    - Lenovo
+    - Acer
+    - Apple
+    - Alurin
+    - Razer
+    - Gigabyte
+    - Dell
+    - Samsung
+    - LG
+    - Toshiba
+- lookup: Storage
+  examples: |
+    - 256
+    - 512
+    - 1000
+    - 128
+    - 1000
+    - 2000
+    - 3000
+    - 4000
+- lookup: RAM
+  examples: |
+    - 8
+    - 16
+    - 32
+    - 4
+    - 64 
+    - 128

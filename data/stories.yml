@@ -1,7 +1,7 @@
 version: "3.1"
 
 stories:
-- story: User finds a laptop with specified brand
+- story: User specifies laptop requirements including brand, RAM, and budget
   steps:
     - intent: greet
     - action: utter_greet
@@ -10,5 +10,13 @@ stories:
     - intent: brand_specified
       entities:
         - brand: "Dell"
+    - action: utter_ask_ram
+    - intent: ram_specified
+      entities:
+        - RAM: "8"
+    - action: utter_ask_budget
+    - intent: budget_specified
+      entities:
+        - budget: 700
     - action: action_find_laptop
     - action: utter_bye
