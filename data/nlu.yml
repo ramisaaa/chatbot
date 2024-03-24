@@ -51,10 +51,10 @@ nlu:
 
 - intent: find_laptop
   examples: |
-    - Find me a laptop under [1000](budget)
-    - Recommend a laptop with brand [brand] around [budget]
-    - I want a Laptop for Programming around [budget]
-    - I want a Laptop for data science jobs under [budget]
+    - Find me a laptop under [1000$](budget)
+    - Recommend a laptop with Dell [brand] around (800$)[budget]
+    - I want a Laptop for Programming around (800$)[budget]
+    - I want a Laptop for data science jobs under (900$)[budget]
     - find me laptop
     - I want a laptop
 - intent: specify_laptop_requirements
@@ -71,25 +71,25 @@ nlu:
 
 - intent: ram_specified
   examples: |
-    - I need at least [8](RAM)
-    - [16](RAM) preferred
-    - RAM: [32](RAM)
-    - RAM: [32](RAM)
-    - [8](RAM)
+    - I need at least [8GB](ram)
+    - [16GB](ram) preferred
+    - ram: [32GB](ram)
+    - ram: [32GB](ram)
+    - [8GB](ram)
 
 - intent: storage_specified
   examples: |
-    - Storage: [256GB](Storage) SSD
-    - [1TB](Storage) HDD storage
+    - Storage: [256GB](storage) SSD
+    - [1TB](storage) HDD storage
     - What's the storage capacity?
-    - [512](Storage)
+    - [512](storage)
 
 - intent: budget_specified
   examples: |
-    - My budget is [1000](budget)
-    - What laptops can I get for [800](budget)?
-    - Budget: [1200](budget)
-    - [1000](budget)
+    - My budget is [1000$](budget)
+    - What laptops can I get for [800$](budget)?
+    - Budget: [1200$](budget)
+    - [$1000](budget)
 - lookup: brand
   examples: |
     - Dell
@@ -105,7 +105,7 @@ nlu:
     - Samsung
     - LG
     - Toshiba
-- lookup: Storage
+- lookup: storage
   examples: |
     - 256
     - 512
@@ -115,11 +115,11 @@ nlu:
     - 2000
     - 3000
     - 4000
-- lookup: RAM
+- lookup: ram
   examples: |
-    - 8
-    - 16
-    - 32
-    - 4
-    - 64 
-    - 128
+    - 8GB
+    - 16GB
+    - 32GB
+    - 4GB
+    - 64GB
+    - 132GB

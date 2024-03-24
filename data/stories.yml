@@ -1,7 +1,7 @@
 version: "3.1"
 
 stories:
-- story: User specifies laptop requirements including brand, RAM, and budget
+- story: User finds a laptop with specified brand, RAM, and budget
   steps:
     - intent: greet
     - action: utter_greet
@@ -13,10 +13,42 @@ stories:
     - action: utter_ask_ram
     - intent: ram_specified
       entities:
-        - RAM: "8"
+        - ram: "8"
     - action: utter_ask_budget
     - intent: budget_specified
       entities:
-        - budget: 700
+        - budget: "700"
+    - action: action_find_laptop
+    - action: utter_bye
+
+- story: User finds a laptop with specified brand and ram
+  steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: find_laptop
+    - action: utter_ask_brand
+    - intent: brand_specified
+      entities:
+        - brand: "Lenovo"
+    - action: utter_ask_ram
+    - intent: ram_specified
+      entities:
+        - ram: "16"
+    - action: action_find_laptop
+    - action: utter_bye
+
+- story: User finds a laptop with specified brand and storage
+  steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: find_laptop
+    - action: utter_ask_brand
+    - intent: brand_specified
+      entities:
+        - brand: "HP"
+    - action: utter_ask_storage
+    - intent: storage_specified
+      entities:
+        - storage: "512"
     - action: action_find_laptop
     - action: utter_bye

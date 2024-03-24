@@ -1,3 +1,5 @@
+version: "3.1"
+
 intents:
   - greet
   - bye
@@ -11,35 +13,44 @@ intents:
   - budget_specified
 
 entities:
-  - CPU
-  - RAM
-  - Storage
+  - cpu
+  - ram
+  - storage
   - budget
   - brand
 
+
+actions:
+  - action_restart
+  - utter_ask_brand
+  - utter_ask_budget
+  - action_find_laptop
+  - utter_bye
+  - utter_greet
+
 slots:
-  CPU:
+  cpu:
     type: text
     mappings:
       - type: from_entity
-        entity: CPU
-  RAM:
+        entity: cpu
+  ram:
     type: text
     mappings:
       - type: from_entity
-        entity: RAM
-  Storage:
+        entity: ram
+  storage:
     type: text
     mappings:
       - type: from_entity
-        entity: Storage
+        entity: storage
   brand:
     type: text
     mappings:
       - type: from_entity
         entity: brand
   budget:
-    type: float
+    type: text
     mappings:
       - type: from_entity
         entity: budget
@@ -52,10 +63,7 @@ responses:
     - text: Bye!
     - text: Good luck!
   utter_greet:
-    - text: Hey there! How can I help you today?
-    - text: Hello.How can I help you today?
-    - text: Hey!
-    - text: Howdy! Is there anything I can help you with?
+    - text: Howdy! I'm here to help you find a laptop based on your preferences?
   utter_ask_brand:
     - text: What brand do you have in mind?
   utter_ask_budget:
@@ -66,14 +74,6 @@ responses:
     - text: enter the amount of storage you prefer.
 
 
-
-actions:
-  - action_restart
-  - utter_ask_brand
-  - utter_ask_budget
-  - action_find_laptop
-  - utter_bye
-  - utter_greet
 
 session_config:
   session_expiration_time: 60
