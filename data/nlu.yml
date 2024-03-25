@@ -48,6 +48,7 @@ nlu:
     - don't like that
     - no way
     - not really
+    - no matter
 
 - intent: find_laptop
   examples: |
@@ -66,8 +67,13 @@ nlu:
 - intent: brand_specified
   examples: |
     - I prefer [Dell](brand) laptops
-    - What about [HP] (brand)?
+    - What about [HP](brand)?
     - Brand: [Dell](brand)
+    - Brand: [Lenovo](brand)
+    - Brand: [Apple](brand)
+    - Brand: [ASUS](brand)
+    - Brand: [MSI](brand)
+    - Brand: [Acer](brand)
 
 - intent: ram_specified
   examples: |
@@ -81,8 +87,7 @@ nlu:
   examples: |
     - Storage: [256GB](storage) SSD
     - [1TB](storage) HDD storage
-    - What's the storage capacity?
-    - [512](storage)
+    - [512GB](storage)
 
 - intent: budget_specified
   examples: |
@@ -109,7 +114,6 @@ nlu:
   examples: |
     - 256
     - 512
-    - 1000
     - 128
     - 1000
     - 2000
@@ -123,3 +127,10 @@ nlu:
     - 4GB
     - 64GB
     - 132GB
+
+- synonym: laptop
+  examples: |
+    - lap top
+    - computer
+    - pc
+    - machine

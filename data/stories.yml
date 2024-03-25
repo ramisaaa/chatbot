@@ -13,42 +13,113 @@ stories:
     - action: utter_ask_ram
     - intent: ram_specified
       entities:
-        - ram: "8"
+        - ram: "8GB"
     - action: utter_ask_budget
     - intent: budget_specified
       entities:
-        - budget: "700"
-    - action: action_find_laptop
-    - action: utter_bye
-
-- story: User finds a laptop with specified brand and ram
-  steps:
-    - intent: greet
-    - action: utter_greet
-    - intent: find_laptop
-    - action: utter_ask_brand
-    - intent: brand_specified
-      entities:
-        - brand: "Lenovo"
-    - action: utter_ask_ram
-    - intent: ram_specified
-      entities:
-        - ram: "16"
-    - action: action_find_laptop
-    - action: utter_bye
-
-- story: User finds a laptop with specified brand and storage
-  steps:
-    - intent: greet
-    - action: utter_greet
-    - intent: find_laptop
-    - action: utter_ask_brand
-    - intent: brand_specified
-      entities:
-        - brand: "HP"
+        - budget: "700$"
     - action: utter_ask_storage
     - intent: storage_specified
       entities:
-        - storage: "512"
+        - storage: "512GB"
+    - action: action_find_laptop
+    - action: utter_bye
+- story: USer deny to answer some questions| brand
+  steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: find_laptop
+    - action: utter_ask_brand
+    - intent: deny
+    - action: utter_ask_ram
+    - intent: ram_specified
+      entities:
+        - ram: "8GB"
+    - action: utter_ask_budget
+    - intent: budget_specified
+      entities:
+        - budget: "700$"
+    - action: utter_ask_storage
+    - intent: storage_specified
+      entities:
+        - storage: "512GB"
+    - action: action_find_laptop
+    - action: utter_bye
+- story: User deny to answer some questions| ram
+  steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: find_laptop
+    - action: utter_ask_brand
+    - intent: brand_specified
+      entities:
+        - brand: "Dell"
+    - action: utter_ask_ram
+    - intent: deny
+    - action: utter_ask_budget
+    - intent: budget_specified
+      entities:
+        - budget: "700$"
+    - action: utter_ask_storage
+    - intent: storage_specified
+      entities:
+        - storage: "512GB"
+    - action: action_find_laptop
+    - action: utter_bye
+- story: User deny to answer some questions| budget
+  steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: find_laptop
+    - action: utter_ask_brand
+    - intent: brand_specified
+      entities:
+        - brand: "Dell"
+    - action: utter_ask_ram
+    - intent: ram_specified
+      entities:
+        - ram: "8GB"
+    - action: utter_ask_budget
+    - intent: deny
+    - action: utter_ask_storage
+    - intent: storage_specified
+      entities:
+        - storage: "512GB"
+    - action: action_find_laptop
+    - action: utter_bye
+- story: User deny to answer some questions| storage
+  steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: find_laptop
+    - action: utter_ask_brand
+    - intent: brand_specified
+      entities:
+        - brand: "Dell"
+    - action: utter_ask_ram
+    - intent: ram_specified
+      entities:
+        - ram: "8GB"
+    - action: utter_ask_budget
+    - intent: budget_specified
+      entities:
+        - budget: "700$"
+    - action: utter_ask_storage
+    - intent: deny
+    - action: action_find_laptop
+    - action: utter_bye
+- story: User deny to answer some questions| all
+  steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: find_laptop
+    - action: utter_ask_brand
+    - intent: deny
+    - action: utter_ask_ram
+    - intent: deny
+    - action: utter_ask_budget
+    - intent: deny
+    - action: utter_ask_storage
+    - intent: deny
     - action: action_find_laptop
     - action: utter_bye

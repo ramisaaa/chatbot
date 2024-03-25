@@ -48,7 +48,11 @@ class ActionFindLaptop(Action):
 
         # Respond to the user with the search results
         if not filtered_laptops.empty:
-            laptop_list = filtered_laptops[['Laptop']].head(20).to_string(index=False)
+            filtered_laptops = filtered_laptops.sort_values(by='Final Price', ascending=False)
+            laptop_list = filtered_laptops[['Laptop', 'Final Price']].head(20)
+            laptop_list['Final Price'] = laptop_list['Final Price'].astype(str)  # Convert to string for concatenation
+            laptop_list['Combined'] = laptop_list['Laptop'] + ' - Price: $' + laptop_list['Final Price']
+            laptop_list = laptop_list['Combined'].to_string(index=False)
             response = f"Here are some laptops that match your criteria:\n\n{laptop_list}"
         else:
             response = "Sorry, no laptops match your criteria. Please try adjusting your preferences."
