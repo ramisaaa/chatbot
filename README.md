@@ -1,16 +1,17 @@
-## todo list
-- [ ] add usability to the action, for example if user asked for a laptop for gaming, programming
-- [ ] add 2 other entities, from_price and to_price for the range
+## Suggestion Laptop Chatbot
+This project is for NLP course at [IMT Atlantique](https://www.imt-atlantique.fr/fr) university. it is a chatbot suing rasa framework version 3.1 and suing a csv file from kaggle suggestion laptops to users based on some questions about ram,storage and budget.
+IT can be improved. we can improve this chatbot by defining usability slot for example if laptop we be used for gaming, programming or ect.
+also range of budget or suggesting websites pages for each finding can be done further. regarding NLP improvements in it, we can improve the model to work only with one sentence such as I want a HP laptop around 1000$ and with 8GB ram and 256GB storage.
 
+This project has been done by:
 
+* Ramisa Heidari
+* Jean Yapo
+* Sarra Mahmoudi
+* Soumaya Razzouk 
+* Maëlle Kerleguer
 
-- [ ] a story with specified brand
-- [ ] a story that deny to specify brand
-- [ ] a story with brand,ram and budget specification
-- [ ] a story directly as finding laptop without greet
-- [ ] using matching algorithm(TP) for action find_laptop
-- [ ] asking about usability of laptop(programming,data science, graphic, game or normal)
-
-
-
-- [ ] User specifies laptop requirements including brand, RAM, and budget=> this didn't work well and didnt ask budget 
+### installation: 
+* at first you should have rasa installed
+* then in one terminal `rasa run actions`
+* in the other one `rasa shel`
