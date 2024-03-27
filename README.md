@@ -3,14 +3,6 @@ This project is for NLP course at [IMT Atlantique](https://www.imt-atlantique.fr
 IT can be improved. we can improve this chatbot by defining usability slot for example if laptop we be used for gaming, programming or ect.
 also range of budget or suggesting websites pages for each finding can be done further. regarding NLP improvements in it, we can improve the model to work only with one sentence such as I want a HP laptop around 1000$ and with 8GB ram and 256GB storage.
 
-This project has been done by:
-
-* Ramisa Heidari
-* Jean Yapo
-* Sarra Mahmoudi
-* Soumaya Razzouk 
-* Maëlle Kerleguer
-
 ### installation: 
 * at first you should have rasa installed
 * then in one terminal `rasa run actions`
